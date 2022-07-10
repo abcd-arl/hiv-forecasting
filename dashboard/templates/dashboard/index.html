@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/dashboard/style.css'%}">
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <header class="head">
+        <div>
+            <h1 class="title"><span style="color: red">HIV</span>Forecasting</h1>
+        </div>
+        <div>
+            <p><b>Abstract:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida ante et quam egestas, eget vulputate
+                sapien hendrerit. Nullam sit amet iaculis arcu. Nam feugiat, risus gravida maximus vulputate, velit tortor
+                molestie eros, eget iaculis mi tortor quis tellus. Pellentesque accumsan arcu sed maximus consequat. Cras
+                elementum, purus vitae porta vestibulum, arcu tellus lacinia dolor, quis luctus nulla massa non ex. Mauris
+                aliquet mi vitae mi imperdiet elementum. Pellentesque ut nisi tellus. Nulla eget molestie quam, vitae mollis
+                eros. Phasellus erat ligula, malesuada id sapien vel, sagittis aliquet sem. Phasellus a ullamcorper tellus.
+            </p>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div>
+                        <input style="font-size:15px; height: 25px; width: 85%;" type="text"
+                               placeholder="Enter new number of cases from July 2021 onwards, separated by semicolons (e.g., 1234; 1436; 989)"/>
+                        <input style="font-size: 21px; color: indianred" type="button" value="Submit">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="graphs-container">
+        <div class="graph-right">
+            <div>{{ raw_line_a |safe }}</div>
+        </div>
+        <div class="graph-left">
+            {{ raw_line_s |safe }}
+        </div>
+    </div>
+
+    <div class="graphs-container">
+
+        <div class="graph-right">
+            {{ residuals_line_a |safe }}
+        </div>
+        <div class="graph-left">
+            {{ validation_line_c |safe }}
+        </div>
+        <div class="graph-right">
+            {{ validation_bar_c |safe }}
+        </div>
+
+        <div class="performance-measure">
+            <p style="font-size:13px; margin: 10px 20px 3px 100px;">Performance Measure</p>
+            <div class="performance-measure-container">
+            <div class="score">
+                <p>MAE<br><span style="font-size: 50px; color:red">n/a</span></p>
+            </div>
+            <div class="score">
+                <p>MSE<br><span style="font-size: 50px; color:red">n/a</span></p>
+            </div>
+            <div class="score">
+                <p>MAPE<br><span style="font-size: 50px; color:red">n/a</span></p>
+            </div>
+        </div>
+        </div>
+
+
+    </div>
+
+    <div class="graphs-container">
+        <div class="graph-right">
+            {{ forecast_line_c |safe }}
+        </div>
+        <div class="graph-left">
+            {{ forecast_bar_s |safe }}
+        </div>
+    </div>
+
+</body>
+</html>

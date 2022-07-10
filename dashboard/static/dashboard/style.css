@@ -1,0 +1,50 @@
+.graphs-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5px;
+    grid-row-gap: 10px;
+}
+
+.graph-right {
+    display: flex; justify-content: flex-end;
+}
+
+.graph-left {
+    display: flex; justify-content: flex-start;
+}
+
+.performance-measure-container {
+    width: 550px;
+    height: 210px;
+    margin: 1px 20px 20px 100px;
+    background: rgba(229,236,246,255);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1px;
+
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: flex-start;
+}
+
+.score {
+    color: blue;
+}
+
+p {
+    font-family: Helvetica;
+}
+
+body {
+    background: white;
+}
+
+header {
+    font-family: Helvetica;
+    margin: 10px 100px 20px 150px;
+    padding-left: 70px;
+    text-align: justify;
+    text-justify: inter-word;
+}
